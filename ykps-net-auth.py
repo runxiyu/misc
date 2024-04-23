@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 
+from __future__ import annotations
+import requests
+import time
+import sys
+import os
 
-def crypt(thing, rc4):
+
+def crypt(thing: str, rc4: str) -> str:
     thing = thing.strip()
     i = 0  # loop iterator
     j = 0
@@ -32,23 +38,21 @@ def crypt(thing, rc4):
         sbox[b] = temp
         c = (sbox[a] + sbox[b]) % 256
         temp = ord(thing[i]) ^ sbox[c]  # bitwise XOR
-        temp = "%0.2X" % temp
-        if len(temp) == 1:
-            temp = "0" + temp
-        elif len(temp) == 0:
-            temp = "00"
-        output[i] = temp
+        temp1 = "%0.2X" % temp
+        if len(temp1) == 1:
+            temp1 = "0" + temp1
+        elif len(temp1) == 0:
+            temp1 = "00"
+        output[i] = temp1
 
     return "".join(output).lower()
 
 
-def login(username, password):
-    import requests
-    import time
+def login(username: str, password: str) -> bytes:
 
     ts = str(int(time.time() * 100))
     r = requests.post(
-            url="http://sjauth.ykpaoschool.cn/ac_portal/login.php",
+        url="http://sjauth.ykpaoschool.cn/ac_portal/login.php",
         params={
             "opr": "pwdLogin",
             "userName": username,
@@ -66,13 +70,11 @@ def login(username, password):
             "Connection": "keep-alive",
         },
     )
+    assert type(r.content) is bytes
     return r.content
 
 
-def main():
-    import sys
-    import os
-
+def main() -> None:
     if len(sys.argv) != 3:
         print(
             "%s: Invalid arguments.  The first argument shall be your username, and the second shall be the name of the environment variable containing your password."
