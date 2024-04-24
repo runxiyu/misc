@@ -1,3 +1,3 @@
 #!/bin/sh
-realm permit --withdraw "$1"
-pkexec rm -rf /home/"$1"
+sudo realm permit --withdraw "$1"
+sudo rm -rf /home/"$1"
