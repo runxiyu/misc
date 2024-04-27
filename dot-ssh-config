@@ -1,0 +1,5 @@
+host rx
+    user me
+    hostname runxiyu.org
+    port 22
+    # identityfile ~/.ssh/id_ed25519
