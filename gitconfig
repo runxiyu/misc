@@ -1,0 +1,11 @@
+[init]
+        defaultBranch = master
+[commit]
+        gpgSign = true
+[tag]
+        gpgSign = true
+[user]
+        signingkey = ACF28DC0A2E8D76446B33A2D545412166A37189B
+[user]
+	email = me@runxiyu.org
+	name = Runxi Yu
