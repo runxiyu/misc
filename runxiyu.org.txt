@@ -1,0 +1,9 @@
+Packaged services:
+	sshd
+	inspircd
+	znc
+	mail
+	nginx
+
+Custom services:
+	ememo		WIP
