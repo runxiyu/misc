@@ -3,3 +3,9 @@ host rx
     hostname runxiyu.org
     port 22
     # identityfile ~/.ssh/id_ed25519
+
+host rxgit
+    user me
+    hostname runxiyu.org
+    port 22
+    identityfile ~/.ssh/id_ed25519_git
