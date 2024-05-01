@@ -1,0 +1,6 @@
+#!/bin/sh
+aliasline='alias uconf="git --git-dir=$HOME/.local/share/uconf.git --work-tree=$HOME"'
+[ -f "$HOME/.bashrc" ] && echo "$aliasline" >> "$HOME/.bashrc"
+[ -f "$HOME/.zshrc" ] && echo "$aliasline" >> "$HOME/.zshrc"
+[ -f "$HOME/.config/zsh/.zshrc" ] && echo "$aliasline" >> "$HOME/.config/zsh/.zshrc"
+git --git-dir="$HOME/.local/share/uconf.git" --work-tree="$HOME" config --local status.showUntrackedFiles no
