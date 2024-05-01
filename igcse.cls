@@ -153,6 +153,7 @@
 
 \newcommand{\coverpage}{
 	\begingroup
+		\fontsize{10}{12}\selectfont
 		\includegraphics[height=8ex]{/home/runxiyu/misc/ykps-bw-logo.pdf}\smallskip
 	
 	        \begin{minipage}{0.11\textwidth}
