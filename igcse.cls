@@ -155,12 +155,12 @@
 	\begingroup
 		\includegraphics[height=8ex]{/home/runxiyu/misc/ykps-bw-logo.pdf}\smallskip
 	
-	        \begin{minipage}{0.1175\textwidth}
+	        \begin{minipage}{0.11\textwidth}
 	        CANDIDATE NAME
 	        \end{minipage} 
 	        \hfill
 	        \fbox{
-	                \begin{minipage}{0.81\textwidth}
+	                \begin{minipage}{0.8\textwidth}
 	                        \mbox{}\hfill\vspace*{5.6ex}\mbox{}
 	                \end{minipage}
 	        }
