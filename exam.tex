@@ -133,18 +133,19 @@
 \newcommand\reject{\textbf{reject} }
 
 % LAYOUT MACROS
-\usepackage{refcount,lastpage,xparse}
+\usepackage{refcount,xparse}
 \newcommand{\blankpage}{\newpage\mbox{}\hfill\textbf{BLANK PAGE}\hfill\mbox{}\par}
 \newcommand{\nomoreturnovers}{\runningfooter{\footnotesize{YKPS 20\eyear}}{\footnotesize \esubjectcode/\ecomponentcode/\emonthshort/\eyear}{\phantom{\textbf{\protect {[}Turn over}}}}
 \ExplSyntaxOn
 \NewDocumentCommand{\ensurefour} { }
- {
-  \prg_replicate:nn
-   { \int_mod:nn { 4 - \int_mod:nn { \getpagerefnumber{LastPage} } { 4 } } { 4 } }
-   { \blankpage }
- }
+	{
+		\label{pagebeforefour}
+		\prg_replicate:nn
+		{ \int_mod:nn { 4 - \int_mod:nn { \getpagerefnumber{pagebeforefour} } { 4 } } { 4 } }
+		{ \blankpage }
+	}
 \ExplSyntaxOff
-\AtEndDocument{\nomoreturnovers\ensurefour}
+% \AtEndDocument{\par\nomoreturnovers\ensurefour}
 
 \begin{document}
 
@@ -189,4 +190,5 @@
 
 \endgradingrange{master}
 
+\nomoreturnovers\ensurefour 
 \end{document}
