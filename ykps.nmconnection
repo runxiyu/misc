@@ -1,3 +1,5 @@
+# TODO: Add certificate for extra security
+
 [connection]
 id=STUWIRELESS
 uuid=980c8380-18e5-4dca-b4ef-f8f8378e9994
