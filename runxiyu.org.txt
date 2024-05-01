@@ -4,6 +4,7 @@ Packaged services:
 	znc
 	mail
 	nginx
+	cgit/git
 
 Custom services:
 	ememo		WIP
