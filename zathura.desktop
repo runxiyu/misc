@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Zathura
+GenericName=File viewer
+Comment=Zathura file viewer
+Exec=zathura %f
+Terminal=false
+Type=Application
+Categories=Viewer;Graphics;
+MimeType=application/pdf;application/x-pdf;
+X-Desktop-File-Install-Version=0.26
