@@ -1,0 +1,4 @@
+# source this in your .zprofile .profile .bashprofile
+
+export QT_QPA_PLATFORM=wayland
+export MOZ_ENABLE_WAYLAND=1
