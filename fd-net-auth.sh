@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 URL="http://10.250.3.66/include/auth_action.php"
 read -p "Username: " username
 read -p "Password: " -s password
