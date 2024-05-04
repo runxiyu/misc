@@ -105,8 +105,8 @@
 	\renewcommand\makelabel[1]{\llap{##1}\hss}
 }
 \renewcommand{\partshook}{%
-	%\addtolength{\leftmargin}{1.5pt}%
-	%\setlength{\labelsep}{1em}%
+	\addtolength{\leftmargin}{1.3em}%
+	\setlength{\labelsep}{0em}%
 	\setlength{\parsep}{\bigskipamount}
 	\renewcommand\makelabel[1]{\llap{##1}\hss}
 }
@@ -143,19 +143,19 @@
 \ExplSyntaxOn
 \NewDocumentCommand{\ensurefour} { }
 	{
-		\label{pagebeforefour}
+		\nomoreturnovers\clearpage
 		\prg_replicate:nn
-		{ \int_mod:nn { 4 - \int_mod:nn { \getpagerefnumber{pagebeforefour} } { 4 } } { 4 } }
+		{ \int_mod:nn { 4 - \int_mod:nn { \value{page}-1 } { 4 } } { 4 } }
 		{ \blankpage }
 	}
 \ExplSyntaxOff
-% \AtEndDocument{\par\nomoreturnovers\ensurefour}
+\AtEndDocument{\ensurefour}
 
 \newcommand{\coverpage}{
 	\begingroup
 		\fontsize{10}{12}\selectfont
 		\includegraphics[height=8ex]{/home/runxiyu/misc/ykps-bw-logo.pdf}\smallskip
-	
+
 	        \begin{minipage}{0.11\textwidth}
 	        CANDIDATE NAME
 	        \end{minipage} 
@@ -166,6 +166,29 @@
 	                \end{minipage}
 	        }
 			
+		\smallskip\medskip\hrule\smallskip
+		{
+			\setlength{\parskip}{\medskipamount}
+			\textbf{\esubjectname}\hfill\textbf{\esubjectcode/\ecomponentcode}\par
+			\ecomponentname\hfill\textbf{\emonthlong{} 20\eyear}\par
+			\mbox{}\hfill\textbf{\etime}\par
+			\setlength{\parskip}{\smallskipamount}\par\eyouwillneed
+		}\bigskip\hrule\medskip\par
+		\einstructions\par\vspace*{1em}\einformation\par\vfill\par\hrule
+		\begin{center}
+			\vspace*{-2ex}
+			This document has \textbf{\numpages} pages. Any blank pages are indicated.
+		\end{center}
+	\endgroup
+	\newpage
+	\setlength{\parskip}{\bigskipamount}
+}
+
+\newcommand{\namelesscoverpage}{
+	\begingroup
+		\fontsize{10}{12}\selectfont
+		\includegraphics[height=8ex]{/home/runxiyu/misc/ykps-bw-logo.pdf}\smallskip
+
 		\smallskip\medskip\hrule\smallskip
 		{
 			\setlength{\parskip}{\medskipamount}
