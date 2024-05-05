@@ -1,0 +1,1 @@
+sudo sed -i 's/%primaryflags%/%primaryflags% --socket --shell-escape/' /usr/share/texlive/texmf-dist/scripts/context/lua/mtxrun.lua
