@@ -1,7 +1,19 @@
 \documentclass{scrartcl}
-\usepackage{tgschola}
-\usepackage{tgheros}
+
 \usepackage[T1]{fontenc}
+\usepackage{iftex}
+\iftutex 
+        \usepackage{fontspec}
+        \setmainfont{TeX Gyre Schola}
+        \setsansfont{TeX Gyre Heros}
+        \setmonofont{TeX Gyre Cursor}
+        \usepackage{unicode-math}
+        \setmathfont{TeX Gyre Schola}
+\else
+        \usepackage{tgschola}
+        \usepackage{tgheros}
+        \usepackage{tgcursor}
+\fi
 
 \title{<++>}
 \author{<++>}
