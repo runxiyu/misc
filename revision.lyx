@@ -1,0 +1,402 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrartcl
+\begin_preamble
+\usepackage{enumitem}
+\setlist[itemize]{
+	wide=0pt,
+	itemsep=0ex,
+	leftmargin=1.2em,
+	align=right,
+	labelwidth=0.8em,
+	labelsep=0.4em,
+	topsep=0ex,
+	itemsep=0ex,
+	parsep=0.4ex,
+}
+\setlist[enumerate]{
+	wide=0pt,
+	itemsep=0ex,
+	leftmargin=1.2em,
+	align=right,
+	labelwidth=0.8em,
+	labelsep=0.4em,
+	topsep=0ex,
+	itemsep=0ex,
+	parsep=0.4ex,
+}
+
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Termes}
+%\setsansfont{TeX Gyre Heros}
+\setsansfont{Cantarell}
+\setmonofont{Logix Mono}
+\setmathfont{TeX Gyre Schola Math}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	top=0.8cm,
+	bottom=1cm,
+	left=1cm,
+	right=1cm,
+	includehead
+}
+
+\usepackage[markcase=upper, headsepline]{scrlayer-scrpage}
+\setlength{\columnsep}{0.8cm}
+\setlength{\columnseprule}{0.4pt}
+\lehead[]{Page~\normalsize\pagemark}
+\cehead[]{IGCSE History Core Content Revision}
+\rehead[]{\rightmark}
+\lohead[]{\leftmark}
+\cohead[]{IGCSE History Core Content Revision}
+\rohead[]{Page~\normalsize\pagemark}
+\lefoot[]{}
+\cefoot[]{}
+\refoot[]{}
+\lofoot[]{}
+\cofoot[]{}
+\rofoot[]{}
+\setkomafont{pageheadfoot}{\normalfont\normalsize}
+\setkomafont{pagenumber}{\normalfont\normalsize}
+% \renewcommand{\sectionmark}[1]{%
+% 	\markboth%
+% 		{{#1}\quad{}\small(Topic\ \thesection)}%
+% 		{{#1}\quad{}\small(Topic\ \thesection)}%
+% }
+\renewcommand{\sectionmark}[1]{%
+	\markboth%
+		{{#1}}%
+		{{#1}}%
+}
+
+\usepackage{datetime2}
+
+\usepackage[
+	type={CC},
+	modifier={by-nc-sa},
+	version={4.0},
+	hyphenation={RaggedRight},
+]{doclicense}
+
+
+\providecommand{\LyX}{\texorpdfstring{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}{LyX}}
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+	bookmarks=true,
+	bookmarksnumbered=false,
+	bookmarksopen=true,
+	bookmarksopenlevel=2,
+	breaklinks=true,
+%	pdfborder={0 0 1},
+	backref=false,
+	colorlinks=true,
+	allcolors={blue!40!black},
+%	allcolors=black,
+}
+\end_preamble
+\options parskip=half-,twocolumn,twoside,9pt
+\use_default_options true
+\begin_modules
+multicol
+\end_modules
+\maintain_unincluded_children false
+\language british
+\language_package auto
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf5
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\pdf_title "IGCSE History Core Content Revision"
+\pdf_author "Cynthia Jia, Katharina Mueller, and Runxi Yu"
+\pdf_subject "For examinations in 2024, 2025, and 2026"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 2
+\pdf_breaklinks true
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Subject
+Subject
+\end_layout
+
+\begin_layout Title
+Topic
+\end_layout
+
+\begin_layout Subtitle
+Revision Resource
+\end_layout
+
+\begin_layout Author
+\begin_inset CommandInset href
+LatexCommand href
+name "Runxi Yu"
+target "https://runxiyu.org/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Updated 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+DTMnow
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Disclaimer
+\end_layout
+
+\begin_layout Standard
+In no event unless required by applicable law will any copyright holder,
+ author, or any other party, be liable to you for damages, including any
+ general, special, incidental or consequential damages arising out of the
+ use or inability to use this document (including but not limited to loss
+ of sanity or your knowledge being rendered inaccurate or losses sustained
+ by you or third parties), even if such holder, author, or other party has
+ been advised of the possibility of such damages.
+ If the disclaimer and limitation of liability hereby provided cannot be
+ given local legal effect according to their terms, reviewing courts shall
+ apply local law that most closely approximates an absolute waiver of all
+ civil liability in connection with this document.
+\end_layout
+
+\begin_layout Section*
+Copyright
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+small
+\backslash
+doclicenseThis}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Information
+\end_layout
+
+\begin_layout Itemize
+The canonical version of this document uses the 9-point Cantarell font family,
+ because it looks nice and familiar, there aren't licensing issues, and
+ the document's line lengths are correct when typeset this way.
+ Microtype is enabled with default options.
+\end_layout
+
+\begin_layout Itemize
+Repo: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://git.runxiyu.org/runxiyu/<++>.git
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+View the latest 
+\begin_inset CommandInset href
+LatexCommand href
+name "PDF"
+target "https://git.runxiyu.org/runxiyu/<++>/<++>.pdf"
+literal "false"
+
+\end_inset
+
+ or 
+\begin_inset CommandInset href
+LatexCommand href
+name "{\\LyX} source"
+target "https://git.runxiyu.org/runxiyu/<++>/<++>.lyx"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dentist.png
+	width 50line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The best cartoon I've seen so far
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cuba-teeth"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+<++>
+\end_layout
+
+\end_body
+\end_document
