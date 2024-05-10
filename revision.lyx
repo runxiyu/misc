@@ -55,10 +55,10 @@
 \setlength{\columnsep}{0.8cm}
 \setlength{\columnseprule}{0.4pt}
 \lehead[]{Page~\normalsize\pagemark}
-\cehead[]{IGCSE History Core Content Revision}
+\cehead[]{<++>}
 \rehead[]{\rightmark}
 \lohead[]{\leftmark}
-\cohead[]{IGCSE History Core Content Revision}
+\cohead[]{<++>}
 \rohead[]{Page~\normalsize\pagemark}
 \lefoot[]{}
 \cefoot[]{}
@@ -293,7 +293,7 @@ status open
 
 \begin_layout Plain Layout
 
-https://git.runxiyu.org/runxiyu/<++>.git
+https://git.runxiyu.org/runxiyu/current/igcse.git
 \end_layout
 
 \end_inset
