@@ -1,0 +1,4 @@
+.f,.f *{position:fixed;height:100%;max-width:100%;top:0;left:50%}
+.f *{transform:translate(-50%,0)}
+.f{display:none;left:0;width:100%;background:rgba(0,0,0,0.8)}
+*:focus+.f{display:block}
