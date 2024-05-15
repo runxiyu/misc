@@ -1,0 +1,5 @@
+[remote "origin"]
+	url = rxgit:runxiyu/current/something.git
+	pushurl = rxgit:runxiyu/current/something.git
+	pushurl = srht:~runxiyu/something
+	fetch = +refs/heads/*:refs/remotes/origin/*
