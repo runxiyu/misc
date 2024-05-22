@@ -29,10 +29,15 @@ I keep track of them in my head.
 - Beloved
 - The Vegetarian
 
-# Tech
+# Tech (immediate)
+- version control irc.
+
+# Tech (projects)
 - fcgit: cgit but FastCGI instead of CGI
 - smlmp/idc/ememo: finish the projects lmao
 - evosaur: look deeper into architecture design
+- dynamic site generator
+- static site generator
 - sjdb/ykps
 - Security
 - OpenBSD
