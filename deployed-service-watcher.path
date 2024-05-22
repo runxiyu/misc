@@ -1,0 +1,5 @@
+[Path]
+PathModified=/srv/git/<++>/<++>/<++>.git/./index.lock
+
+[Install]
+WantedBy=multi-user.target
