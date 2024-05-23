@@ -1,0 +1,606 @@
+\documentclass[a4paper,numbers=endperiod,most,twoside,english,final,openany]{scrbook} % openany vs openright
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+
+%\usepackage{fontspec}
+%\setmainfont{Times Roman}
+%\setsansfont{Arial}
+%\setmonofont{Courier}
+%\usepackage{libertine}
+%\usepackage{cochineal}
+%\usepackage{berasans}
+%\usepackage{lmodern}
+\usepackage{scrhack}
+\usepackage{afterpage}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{0}
+%\setuptoc{toc}{twocolumn}
+\unsettoc{toc}{onecolumn}
+\usepackage{xcolor}
+\definecolor{haesecyan}{RGB}{76,169,231}
+\colorlet{theblueish}{rgb:blue!65!black,7;cyan!65!black,6}
+\usepackage{babel}
+\usepackage{lastpage}
+\usepackage{pifont}
+\usepackage{multicol}
+%\usepackage[legalpaper,includehead,includemp,reversemp,marginparwidth=4em, vmargin={1.5mm,3mm},hmargin=1.75mm]{geometry}
+\usepackage{geometry}
+\geometry{inner=2.5cm, outer=1.5cm, top=2.5cm, bottom=2cm}
+\usepackage{enumitem}
+\setlist[itemize]{label=\textbullet,leftmargin=*,noitemsep}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{cover.jpg}%
+}}}
+\usepackage[nospace]{varioref}
+\providecommand\vref[1]{\ref{#1}}
+\labelformat{chapter}{\S #1}
+\labelformat{section}{\S #1\qquad} % shouldn't be used
+\labelformat{figure}{Figure~#1}
+\usepackage[most]{tcolorbox}
+\usepackage{microtype}
+\usepackage[status=final]{fixme} % !!!
+\fxuselayouts{margin}
+\fxsetface{inline}{\color{orange!50!black}}
+\fxsetface{margin}{\color{orange!50!black}\scriptsize}
+\fxsetface{env}{\color{orange!50!black}}
+\fxsetface{target}{\color{orange!50!black}}
+\usepackage[math]{blindtext}
+\usepackage{microtype}
+\usepackage[markcase=upper,headsepline]{scrlayer-scrpage}
+%\automark[chapter]{chapter}
+\lehead[]{\pagemark\qquad\leftmark}
+\cehead[]{}
+\rehead[]{}
+\lohead[]{}
+\cohead[]{}
+\rohead[]{\rightmark\qquad\pagemark}
+\lefoot[]{}
+\cefoot[]{}
+\refoot[]{}
+\lofoot[]{}
+\cofoot[]{}
+\rofoot[]{}
+\renewcommand{\sectionmark}[1]{}
+\setkomafont{pageheadfoot}{\color{theblueish}\normalfont\small}
+\setkomafont{pagenumber}{\normalfont\normalsize}
+
+%\usepackage[style=apa]{biblatex}
+%\addbibresource{bib.bib}
+%\nocite{*}
+%\usepackage{imakeidx}
+%\makeindex[intoc, columns=3, options= -s index_style.ist]
+\newcommand\spars{\setlength{\parindent}{1em}}
+\newcommand\igcsemarks[1]{ [#1 marks]}
+
+\usepackage{comment}
+
+\makeatletter
+\newcommand{\twocolumntableofcontents}{\begingroup\setlength{\columnsep}{2cm}
+\twocolumn\tableofcontents\onecolumn\endgroup}
+\renewcommand{\frontmatter}{\if@twoside\cleardoubleoddpage\else\clearpage\fi \@mainmatterfalse}
+\renewcommand{\mainmatter}{\if@twoside\cleardoubleoddpage\else\clearpage\fi \@mainmattertrue}
+\newcommand*{\openawareclearpage}{\if@openright\cleardoublepage\else\clearpage\fi}
+\newcommand*{\singlep@gechapterheading}[1]{%                           
+  \clearpage%
+  \scr@ifundefinedorrelax{#1pagestyle}{}{%                    
+    \Ifstr{#1pagestyle}{}{}{%                                 
+      \thispagestyle{\@nameuse{#1pagestyle}}%        
+    }%                                                      
+  }%                                                           
+  \global\@topnum\z@                                         
+  \@ifundefined{scr@#1@afterindent}{\@afterindentfalse}{%
+    \csname scr@#1@afterindent\endcsname             
+    {\@afterindenttrue}{\@afterindentfalse}{%
+      \@afterindenttrue%
+      \@ifundefined{scr@#1@beforeskip}{\@afterindentfalse}{%
+        \ifdim\glueexpr\@nameuse{scr@#1@beforeskip}\relax<\z@
+          \@afterindentfalse%                     
+        \fi                                 
+      }%                  
+    }%
+  }%                                        
+  \expandafter\SecDef\csname @#1\expandafter\endcsname\csname @s#1\endcsname                                                
+}
+\def\singlepagechapterheading{\singlep@gechapterheading{chapter}}
+\makeatother
+
+\usepackage{charter}
+%\usepackage[
+%  type={CC},
+%  modifier={by-sa},
+%  version={4.0},
+%]{doclicense}
+
+\colorlet{mybluei}{theblueish}
+\colorlet{myblueii}{theblueish}
+%\definecolor{mybluei}{RGB}{28,138,207}
+%\definecolor{myblueii}{RGB}{28,138,207}
+%\colorlet{mybluei}{blue!50!black}
+%\definecolor{myblueii}{RGB}{131,197,231}
+
+\addtokomafont{chapter}{\fontsize{30pt}{30pt}\selectfont\color{theblueish}}
+\newkomafont{chapternumber}{\fontsize{50}{120}\selectfont\color{white}}
+
+\addtokomafont{section}{\fontsize{20pt}{20pt}\selectfont\color{theblueish}}
+\newkomafont{sectionnumber}{\fontsize{23pt}{23pt}\selectfont\sffamily\color{white}}
+
+\addtokomafont{subsection}{\fontsize{16pt}{16pt}\selectfont}
+\newkomafont{subsectionnumber}{\fontsize{18pt}{18pt}\selectfont\sffamily}
+
+%\renewcommand\chapterformat{%
+%  \raisebox{-6pt}{\colorbox{haesecyan}{%
+%    \parbox[b][60pt]{60pt}{\centering%
+%      \vspace*{6pt}{\usekomafont{chapternumber}{\thechapter}}%
+%      \vspace{6pt}%
+%}}}\enskip}
+%\renewcommand\chapterformat{%
+%  \raisebox{-6pt}{%
+%    \parbox[b][60pt]{60pt}{\centering%
+%      \vspace*{6pt}{\usekomafont{chapternumber}{\thechapter}}%
+%      \vspace{6pt}%
+%}}\enskip}
+
+
+\renewcommand\sectionformat{%
+  \setlength\fboxsep{5pt}%
+  \raisebox{-0pt}{\colorbox{mybluei}{%
+    \enskip\usekomafont{sectionnumber}{\thesection}\enskip}%
+  \quad%
+}}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{angles}
+\usetikzlibrary{quotes}
+\usetikzlibrary{arrows.meta}
+%\tikzset{%
+%	every picture/.style={%
+%		line width=1pt,%
+%		fill=haesecyan,%
+%		draw=haesecyan,%
+%		text=theblueish,%
+%	},%
+%	>={Stealth[length=6pt,inset=2pt]}%
+%}
+%
+\tcbset{
+    colframe=magenta,
+    colback=magenta!12!white,
+    boxed title style={colback=magenta},
+	breakable,
+	enhanced,
+	sharp corners,
+	boxsep=1pt,
+	attach boxed title to top left={yshift=-\tcboxedtitleheight,  yshifttext=-.75\baselineskip},
+	boxed title style={boxsep=1pt,sharp corners},
+    fonttitle=\bfseries\sffamily,
+    drop lifted shadow
+}
+\newtcolorbox{summary}[1][]{
+    no shadow,
+    top=2ex,
+    boxrule=0pt,
+    leftrule=1.4pt,
+    title={Topic Summary},
+    colframe=red!79!blue,
+    colback=red!12!white,
+    boxed title style={colback=red!79!blue},
+    overlay unbroken and first={
+        \node[below right,font=\small,color=magenta,text width=.8\linewidth]
+        at (title.north east) {#1};
+    }
+}
+
+\newtcolorbox[auto counter,number within=chapter,number format=\arabic]{ppq}[1][]{
+    title={Practice},
+    colframe=violet,
+    colback=violet!12!white,
+    boxed title style={colback=violet},
+    overlay unbroken and first={
+        \node[below right,font=\small,color=violet,text width=.8\linewidth]
+        at (title.north east) {#1};
+    }
+}
+
+\newtcolorbox{remark}[1][]{
+    title={\scalebox{1.75}{\raisebox{-.25ex}{\ding{43}}}~Remark},
+    colframe=yellow!45!white,
+    colback=yellow!45!white,
+    coltitle=haesecyan,%%%%%%
+    fontupper=\sffamily,
+    boxed title style={colback=yellow!45!white},
+    boxed title style={boxsep=1ex,sharp corners},%%
+    overlay unbroken and first={
+        \node[below right,font=\normalsize,color=red,text width=.8\linewidth]
+        at (title.north east) {#1};
+    }
+}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{\medskipamount}
+\renewcommand{\chaptername}{Topic}
+
+
+%\usepackage[unicode=true, bookmarks=true,bookmarksnumbered=true,bookmarksopen=false, breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},colorlinks=true,allcolors=blue!50!black]{hyperref}
+\usepackage[unicode=true, bookmarks=true,bookmarksnumbered=true,bookmarksopen=false, breaklinks=false,colorlinks=true,urlcolor=haesecyan,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black]{hyperref}
+\hypersetup{pdftitle={World War One}, pdfauthor={Andrew Yu}, pdfsubject={IGCSE History}}
+\newcommand{\myurl}[1]{\href{#1}{#1}}
+\usepackage{cleveref}
+
+\subject{IGCSE History}
+%\subtitle{Revision Notes}
+\title{World War One}
+\author{Andrew~Yu}
+\date{Build~\input{BUILD}\\Alpha~Version~0\\\today}
+
+\begin{document}
+\AddToShipoutPicture*{\BackgroundPic}
+\frontmatter\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{\MakeUppercase{#1}}}
+\phantomsection\addcontentsline{toc}{part}{IGCSE History: World War One}% Revision Notes
+%\maketitle
+\begin{titlepage}
+%\pagecolor{rgb:white!50!blue,1;white!60!violet,1}\afterpage{\nopagecolor}
+\pagecolor{white!90!haesecyan}\afterpage{\nopagecolor}
+  \raggedleft%
+  \includegraphics[height=9ex]{ykps.pdf}
+
+  \vspace*{\stretch{0.4}}
+
+  \textbf{\sffamily\fontsize{30}{40}\selectfont IGCSE History}\\[1.5\baselineskip]
+  \textbf{\fontsize{50}{40}\selectfont World War One}\\[1.5\baselineskip]
+ % {\itshape\fontsize{40}{40}\selectfont Revision Notes}
+  
+  \vspace{\stretch{1.1}}
+
+\end{titlepage}
+
+\phantomsection\label{legal-information}
+\thispagestyle{empty}
+
+\begingroup
+\setlength{\parindent}{0em}
+\setlength{\parskip}{\medskipamount}
+
+\textbf{\large IGCSE History: World War One}% Revision Notes}
+\medskip
+
+{\copyright} {Andrew~Yu} 2023
+
+Web: \myurl{https://www.andrewyu.org/}
+
+\hspace*{1em}\begin{tabular}{ll}
+  First Draft Version & 2022\\
+  \textit{Build \input{BUILD}} & \today
+\end{tabular}
+
+\medskip
+
+Editorial review by various students at YK~Pao School.
+
+Typeset by Andrew~Yu with the help of {\LaTeX}. Typeset in Nimbus Roman 10.
+
+Printed in China by YK~Pao School's printers.
+ 
+\vfill
+
+This work has been developed independently from and is not endorsed by Cambridge Assessment International Education. IGCSE is a registered trademark of Cambridge Assessment International Education.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this work and associated files, to deal in the Work without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Work, and to permit persons to whom the Work is furnished to do so, subject to the following conditions:
+
+This entire copyright page, including the above copyright notice, this permission notice, and the below warranty disclaimer shall be included in all copies or substantial portions of the Work.
+
+There is no warranty for the work, to the extent permitted by applicable law. Except when otherwise stated in writing the copyright holders and/or other parties provide the work ``as is'' without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose and non-infringement. The entire risk as to the quality of the work is with you. Should the work prove defective, you assume the cost of all necessary related activities.
+
+In no event unless required by applicable law or agreed to in writing will any copyright holder, distributor, or any other party who modifies and/or conveys the work as permitted above, be liable to you for damages, including any general, special, incidental or consequential damages arising out of the use or inability to use the work (including but not limited to being confused by false information and failing your exams), even if such holder or other party has been advised of the possibility of such damages.
+
+If the disclaimer of warranty and limitation of liability provided above cannot be given local legal effect according to their terms, reviewing courts shall apply local law that most closely approximates an absolute waiver of all civil liability in connection with the work, unless a warranty or assumption of liability accompanies a copy of the work in return for a fee.
+
+This work recalls factual statements included IGCSE past papers (both question papers and mark schemes) and Wikipedia, and the author hereby acknowledges the importance of such sources.  Historical factual information itself is not copyrightable under the Copyright Act of the People's Republic of China.  Consult your jurisdiction's laws and regulations for the legality of such material in your jurisdiction.  While every attempt has been made to trace and acknowledge copyright, the author apologize for any accidental infringement where copyright has proved untraceable.
+
+\endgroup
+
+\chapter{Foreword}
+
+This document is a course companion for the IGCSE History (0470): Option~B (the 20th Century): World War One depth study unit. This is designed for first examinations in 2024. More syllabus information is available at \myurl{https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-history-0470/}.
+
+We were looking for comprehensive review materials, but found no exceptionally good ones.  They either only answer specific questions and lack a hollistic understanding of the entire war and how events link to each other in a broader sense, or they are too general and lack specific knowledge.  Here we are, in some sense over-ambitiously, attempting to unify all materials we have---but we are just random students so don't expect it to be really good either.  I just hope that it'll help some people and reading it won't be an entire waste of time.
+
+This depth study unit does not cover the origin of conflict for World War One, it merely discusses the war itself.  That's what this document is aiming to discuss for now.  However, as I recognize that the events leading to the war are (1)~in the curriculum and (2)~beneficial to know about when discussing events during the war too, some references to the origin and aftermath of the conflict are also discussed, albeit in less detail than materials specifically designed for these materials.
+
+This document is a work-in-progress and is wildly incomplete. Particularly, it is unclear which chapters should specific information belong; the current strategy is to include an excerpt of such information where relevant and use cross-references to the rest of the document in case more specific information is needed, but things are getting messey.  
+
+This document is actively developed at the Git repository \myurl{https://git.andrewyu.org/andrew/school/history/ww1.git/}.  Plain versions of these files are available at \myurl{https://git.andrewyu.org/andrew/school/history/ww1.git/plain/}.  You may find the {\LaTeX} source code of this document, the compiled document, and supplementary materials, in the repository.
+
+Contributions are welcome.  Please submit any suggestions and/or patches via plain text electronic mail to \href{mailto:andrew-public-inbox@andrewyu.org}{andrew-public-inbox@andrewyu.org} or \href{mailto:s22537@ykpaoschool.cn}{s22537@ykpaoschool.cn}.
+
+\openawareclearpage%
+\phantomsection%
+\addcontentsline{toc}{chapter}{Contents}
+%\begin{multicols}{2}
+\twocolumntableofcontents
+%\end{multicols}
+
+\renewcommand{\chaptername}{Topic} % TODO: Why does it only work when placed here and not in the preamble?
+\mainmatter\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}\quad{}(\chaptername\ \thechapter)}{\MakeUppercase{#1}\quad{}(\chaptername\ \thechapter)}}
+
+%\part{Subject Topics}
+
+\chapter{The Parties Involved}
+
+\begin{description}
+	\item [Central Powers] Germany, Austria-Hungary and Italy. (Italy later betrayed them and became one of the allies but was relatively insignificant to the war anyway.) Germany is the most important and the others are rarely discussed. Although Austria-Hungary started the war by declaring war on Serbia after the assassination of the Archduke, Austria-Hungary was in general pretty weak and played a relatively small role in the entire war.
+	\item [The Allies] Mainly Britain, France and Russia. (The United~States was to join later, Russia was to leave, and Belgium is also on the side of the allies during the initial resistence.)
+\end{description}
+At this point, the Central Powers, particularly Germany, is contemplating attacking the Allies. On 1 August, 1914, Germany declared war on Russia. This was the beginning of the more significant part of World~War~One.
+
+Although Austria-Hungary's affairs with Serbia was the direct spark that led to the war,
+
+%\begin{anfxnote}{What led up to the war?  What are the roles of each country?}
+%	This chapter needs expansion.  For example, it may be a good idea to discuss topics in the following list and should be approximately two pages.  However, as this depth study unit is about the war itself, it shouldn't be longer than that.
+%	\begin{itemize}
+%		\item The Bosnian Crisis
+%		\item The Balkan Wars
+%		\item The assasination of the Austrian-Hugarian Archduke and the declarations of war
+%		\item The role that Austria-Hungarty played throughout the war (asking Germany for help all the time but not really providing assistance back to Germany in return)
+%		\item Tension building over capitalism and colonies in the late 19th century and their importance
+%	\end{itemize}
+%\end{anfxnote}
+
+
+\chapter{Schlieffen Plan}
+
+The Schlieffen Plan was Germany's quick plan to war, drafted by General von~Schlieffen. The plan involved using 6,000,000 men, which is 90\% of Germany's army (sometimes known as the ``right wing'', which Schlieffen said must be six times stronger than any other division to carry out the plan) to surround and capture Paris from the east and cause French surrender, all in six weeks, and then attack Russia. The attack was planned to go through Belgium, Luxembourg and Holland as the Germans would not have time to penetrate French fortifications and defenses on its Germany border.
+
+\section{Reasons for the Schlieffen Plan}
+
+% What are the exact numbers of the armies that made Germany believe that it wouldn't stand a chance
+% What made Germany believe that Russia would be slow to mobilize, historically?
+Germany's geographical position put it in a difficult position if there was a war.  Opposing Germany in the Triple Entente were Russia and France on either side of Germany, meaning that Germany would have to fight on both sides of the country at the same time, which would divide German forces and make them weaker, rendering it unlikely that Germany would win the war.  Germany thought that it was likely that a war was coming and that it would end up in this position.  The Schlieffen Plan was developed because of this situation, which involved a quick victory over France in six weeks before Russia was ready to fight, and then turning on Russia.  Additionally, as the French have well-defended fortifications on its German border, the Schlieffen Plan planned to go through Belgium, Luxembourg and Holland to enter France.  The plan seemed to solve Germany's problem.
+
+\section{Changes to the Schlieffen Plan}
+
+Although the original Schlieffen Plan was written by von~Schlieffen, Schlieffen was retired by the point war broke out.
+
+The new general, Moltke did not listen to Schlieffen's dying words of “keep the right flank strong”. Schlieffen urged that the right flank of the German army should be 6 times stronger than any other. Molke ignored his advice and reduced the number of soldiers in the plan by 100,000 and the additional troops were sent to the Eastern Front or to the south for the defense of the territory of Lorraine. The changes diluted the plan as there will be less soldiers fighting against the Allies on the Weatern Front in their main attack.
+
+Moltke altered the route of the plan. In the initial Schlieffen plan, the German troops were planned to make a wide sweep through the Netherlands, Belgium, and Luxembourg. However, Moltke modified the plan by ordering the soldiers to take a direct route through Belgium, causing all of his troops to face fierce resistance from Belgium, delaying the plan.  They were delayed by ten extra days at Liege and forces were diverted for two months at Antwerp.
+
+The changes that Moltke made, in general, weakened the Schlieffen Plan.  However, they weren't very decisive---the Schlieffen Plan was likely to fail anyway because of other reasons (\vref{falure of the schlieffen plan}).  As with any single factor of failure, its impact on its own is limited.
+
+\begin{figure}
+    \includegraphics[angle=90,width=\textwidth]{Schlieffen_Plan.jpg}
+    \caption{The Schlieffen Plan after Moltke, by Tinodela. Public domain.}
+\end{figure}
+
+\section{Failure of the Schlieffen Plan\label{sec:Failure-of-the-Plan}}
+
+The success of the Schlieffen Plan depends on multiple factors, all assumed to be true by Schlieffen, but were over ambitious and did not reflect reality. The following major ``miscalculations'' and tactical failures disrupted the Schlieffen Plan and ultimately caused the plan to fail.
+
+\begin{description}
+	\item [{Belgian resistance}] The Germans assumed that Belgium would not resist them sending their army through Belgium to reach France, or that Belgium would have weak and insignificant resistance.
+
+		In reality, the Belgians resisted fiercely, particularly at the Siege of Liège and the Battle of Yser with heavy fortifications. The Siege of Liège was supposed to happen in 48 hours, but instead took 10 days. 125,000 soldiers were also diverted to take \fxnote*{Why is Antwerp an insignificant military target?  Discuss the reasons that may have led Germany to capture it anyway.}{Antwerp which was of insignificant military value} which lasted until 10 October. Belgians were also actively sabotaging German railway and communication lines with floods. All this also made the Germans more careful and they started to avoid taking heavy casualties, which further slows them down, giving France time to prepare, causing splits \fxnote*{Which German armies were split specifically because of Belgian actions?}{within German armies}, and \fxnote*{Arguably the UK joined the war \emph{because} Belgium resisted.}{potentially causing Britain to join the war}. (\vref{belgian resistance})
+	\item [{Changes to the plan}] The German general Moltke changed the original plan, failing to keep the right wing strong as Schlieffen planned rendering the German army on the Western front weaker than required to capture Paris, \fxnote*{How exactly did the change of plan affect things?  Supposedly that makes the plan quicker in compensation for the other delays?  How did that \emph{harm} the Schlieffen Plan?}{and chose a more direct route to Paris rather than encircling Paris}. (\vref{changes to the plan})
+	\item [{British involvement}] The Germans assumed that the British was not interested in joining continental European warfare. Although as an island nation the British did not have a large army, the British Expeditionary Force was well-trained and would cause further difficulties for Germany. However, the UK declared war on Germany with the official reason being Germany invading Belgium (a neutral country) and proved to be relatively important throughout the war. In halting German advnace in 1914, the BEF pushed the German army back at the batle of Mons and helped create a stalemate at the Ypres in 1914, further stopping German advancement. (\vref{british involvement})
+	\item [{Unprofessional German army}] The Germans based their performance calculations off professional soldiers, but in reality many of Germany's soldiers were new volunteers or newly conscripted. Without years of training, these new soldiers did not perform to the expectations of the plan---marching 15 miles a day in the summer head exhausted the soldiers who then performed badly during battles.
+	\item [{Russia mobilizing fast}] The Germans calculated that Russia would take six weeks to mobilize and planned on using this time to capture France. However, Russia proved to be much quicker to mobilize and some significant armies reached the German border on 17 August. Germany had to divert 150,000 soldiers from the Western Front, who were to slow to provide actual support for the Eastern Front for their victory at Tannenburg but severely weakened the Schlieffen Plan. \fxnote{Missing cross-reference to the Eastern Front.} Germany is now fighting a war on two fronts, exactly what the Schlieffen Plan was meant to avoid.
+	\item [{French morale}] \fxnote*{I found this point that French morale was expected to be low by the Germans somewhere but more specific evidence and analysis is needed.}{The Germans expected that French forces and morale would collapse under the German onslaught.  However, the French morale was relatively high despite their high casualties.}
+	\item [Element of Surprise] \fxnote*{What are the effects of these French actions?  How do they relate to the French realizing Germany's Schlieffen Plan?  Did they move more troops to the Belgian border?}{French General Joffre had realized the German plan in enough time. He moved forces out of Lorraine and retreated to prepared defenses and created a 6th French Army under Maunoury, which meant at the Marne he had 41 divisions compared to 24 German.}
+	\item [First Battle of the Marne] The German failure at the First Battle of the Marne (\vref{first battle of the marne}) was decisive in Germany's failure. \fxnote{How specifically did the Marne effect the plan?}
+	\item [War Supplies] \fxnote{How exactly did the Germans have an excessively long war front?}
+\end{description}
+The Germans left no margin for error in its tightly packed and ambitious Schlieffen Plan with systematic errors listed above. Failure of any part could result in failure and possibly total defeat---in reality, almost all general assumptions of the plan were not met. Additionally, Germany's failure in multiple battles, especially the \textbf{First Battle of the Marne}, further delayed Germany and hindered the success of the plan.
+
+\section{Importance of the Schlieffen Plan}
+The following points describe the importance of the Schlieffen Plan, both that of the plan itself and the failure thereof.
+\begin{description}
+	\item [Success may have ended the war quickly] \emph{If} the Schlieffen Plan was successful the war could have been over with a German win very quickly.  If France had been defeated, it is difficult to envision how Britain would have been able to land an army back onto Europe that could threaten Germany as the BEF is undoubtably outnumbered by the Germany army.\fxnote{Then how does the failure of the plan extend the war?}
+	\item [Failure meant war on two fronts] The failure of the Schlieffen Plan meant that Germany now must face war both on the Western Front against France and Britain (and Belgium and the US, depending on the timeframe), but also must defend against Russia at the same time.
+	
+		However, it must be noted that in Russia, the battles of Tannenburg, Masurian Lakes and Warsaw had taken 1.8 million Russian casualties, after which Russia was no longer capable of offensive operations that could threaten Germany.
+	\item [Leading to the Race of the Sea] \fxnote{How exactly did the failure of the Schlieffen Plan lead to the Race to the Sea?}
+	\item [Morale boost for the French] The heroic defense at the Marne by Foch and Petain under restored pride in the French army after the Franco-Prussian war.\fxnote{This also backfired to some extent, as over-pride caused the failure of Plan XVII.  Elaboration needed.}
+\end{description}
+
+\vfill
+\begin{summary}
+  \begin{itemize}
+    \item The Schlieffen Plan was Germany's quick plan to war, which involves \ldots
+      \begin{itemize}
+        \item capturing Paris in six weeks through Luxembourg and Belgium,
+        \item then attacking Russia.
+      \end{itemize}
+    \item This is because \ldots
+      \begin{itemize}
+        \item Germany didn't want to face a war on both fronts,
+        \item they believe Russia would be slow to mobilize,
+        \item and their border with France is well-fortified and thus hard to attack.
+      \end{itemize}
+    \item The plan failed because \ldots
+      \begin{itemize}
+        \item Belgium resisted fiercely,
+        \item German general Moltke changed the original plan, failing to keep the right wing strong, and chose a more direct route to Paris instead of encircling it, leading to the First Battle of the Marne,
+        \item the British joined the allies,
+        \item the German army was unprofessional,
+        \item and Russia mobilized faster than expected.
+      \end{itemize}
+  \end{itemize}
+\end{summary}
+
+\begin{ppq}
+  \begin{itemize}
+    \item ``The Schlieffen Plan failed because of the actions of the British Expeditionary Force.'' How far do you agree with this statement? Explain your answer.\igcsemarks{10}
+    \item Why were Britain and France not able to defeat Germany in 1914?\igcsemarks{6}
+  \end{itemize}
+\end{ppq}
+
+% vim: filetype=tex linebreak
+
+\chapter{Belgian Resistance\label{belgian}}
+
+\section{Background of Belgian Resistance}
+The Treaty of London, signed 1839, guaranteed that the neutrality of Belgium would be respected by neighboring European powers. Germany (who was a signatory) violated this when they invaded Belgium on 3 August 1914 as part of the Schlieffen Plan.  Germany expected Belgium to let them through or have little defense.  They asked for free passage across Belgium which was refused and the Germans decided to fight across.  However, in reality Belgium refused permission for the Germany Army to pass through freely and defended fiercely.
+
+\section{Process of Belgian Resistance}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\textwidth]{German_advance_through_Belgium_August_1914.png}
+	\caption{German advance through Belgium, August 1914, by Maxxl2. CC BY-SA 3.0.}
+\end{figure}
+
+The Belgian army was mobilized.  The Germans expected to go through the entirety of Belgium in two full days, but in fact the fighting to take the small fortified town of Li\`ge alone took twelve days, slowing down the Schlieffen Plan drastically and was a major contributor to its failure.  Railway lines and bridges were demolished to slow down the Germans.  The defense at Antwerp against a small but significant portion of the German army took two months, but acted as an important diversionary force diverting Germany's attention from the rest of the Schlieffen Plan.  The resistance also created time for the BEF to land in France and reach Mons (\vref{mons}).
+
+The German behavior in Belgium and the death of 6000 civilians, which was used as evidence of Germans being inhumane in British and French propaganda, contributed to a lack of neutral support (importantly from countries like the US but that isn't a deciding factor for the US joining the allies) and disquiet amongst intellectuals within Germany.
+
+\section{Importance of Belgian Resistance}
+Belgian resistance won them many friends and sympathy from Allies which was an important reason for Britain to honor the Treaty of London and declare war on Germany.  Belgian resistance also drastically slowed the Germans down from the Schlieffen Plan by at least ten days, which bought the French, British and Russians time to mobilize, leading to the failure of the Schlieffen Plan.
+
+It is true that there are many other events that are important to the entire war, such as the Battle of the Marne, Russian mobilization, new weapons, trench warfare, the war at sea (especially the British blockade), the Battle of the Marne and Verdun, US entry into the war.  However, it is hard to deny that Belgian resistance bought the allies precious time to mobilize especially for the decisive Battle of the Marne, without which Germany may be able to carry out the Schlieffen Plan to plan.
+
+\chapter{Battle of the Frontiers}
+
+Initially unaware of the Schlieffen Plan, France launched Plan XVII, the French ``scheme for mobilization and concentration'' for war. 
+
+\section{Aftermath}
+
+\chapter{British Involvement}
+
+
+
+\chapter{First Battle of the Marne}
+\chapter{Race to the Sea}
+\chapter{Trench Warfare}
+\chapter{Stalemate by 1914}
+\chapter{Japanese Involvement}
+\chapter{Arab Revolt}
+\chapter{Allies' Home Front}
+\chapter{Women}
+\chapter{War Technology}
+\section{Tanks}
+\section{Machine Guns}
+\section{Aircraft}
+\section{Gas}
+\chapter{Eastern Front}
+\chapter{Russia's Home Front}
+\chapter{Battle of Verdun}
+\chapter{Battle of the Somme}
+\chapter{Douglas~Haig}
+\chapter{War at Sea}
+\chapter{Commonwealth Involvement}
+\chapter{African Involvement}
+\chapter{Gallipoli}
+\chapter{Russian Revolution}
+\chapter{American Involvement}
+
+\section{``Unofficial Involvement''}
+
+Although the US was officially neutral before its declaration of war in April 1917, it supplied Britain and other applies with money, food, raw materials, arms, and other supplies. 
+
+\section{Reasons for American Involvement}
+
+\begin{description}
+	\item[Economic Interests] American businesses had significant economic stakes in the outcome of the war, as they were exporting vast amounts of supplies to the Allied powers.\fxnote{elaborate!!!}
+	\item[Ideological Beliefs] President Woodrow~Wilson and many Americans believed in the principles of democracy and freedom and saw Germany's militaristic policies as a threat to these values.
+	\item[Unrestricted] The sinking of the British passenger ship Lusitania, in which over 100 American citizens died, by a German submarine heightened tensions between the US and Germany and helped to mobilize American public opinion in favor of joining the war. Germany restarted unrestricted submarine warfare in 1918, which swayed the Americans more in favor of joining the war.
+	\item[The Zimmermann Telegram] The Zimmermann Telegram, a secret message sent from Germany to Mexico proposing a military alliance against the US, further convinced President Wilson and the American public that joining the war was necessary to protect their national security interests.
+	\item[Propaganda] Both the Allies and the US government used propaganda to shape public opinion and build support for the war effort. This included posters, speeches, and other forms of media that emphasized the importance of defeating Germany.
+\end{description}
+
+\section{American Forces on the Western Front}
+
+The US President, Woodrow Wilson, put Major-General John Pershing in
+command of the American Expeditionary Force (the AEF) sent to Europe. Few American soldiers had fought in any wars, and they were certainly not familiar with the sort of conditions they would find on the Western Front. Pershing therefore insisted that American forces were well trained before going to Europe and, later, many received further training once they arrived in France. The first American troops landed in France in June 1917 and by the end of the month, 14,000 American soldiers had arrived. Eleven months later, over 1 million American troops were stationed in France, arriving at the rate of 10,000 a day.
+
+About half of the US soldiers stationed in France worked on developing the French transport system so that it could move vast numbers of men and supplies quickly and efficiently. For example, they:
+
+\begin{itemize}
+	\item Enlarged French ports so that more ships could deliver men and supplies • built over 1,600 km of railway lines laid over 16,000 km of telegraph and telephone cables.The US troops that took part in the fighting played an important part in the military defeat of Germany.
+General Haig aareed to send two divisions of the recently arrived Americans to join the Allies in the second battle of the Marne in July 1918. This successfully prevented German forces taking Paris during the Ludendorff Offensive. (See page 79.)
+• On 21 August 1918, over 108,000 US soldiers joined with the British
+Third Army in the second battle of Albert. After 2 days, over 8000 German
+soldiers had been captured.
+• Pershing commanded the US First Army, consisting of more than 500,000
+men, in the largest operation ever undertaken by American forces. Beginning on 12 September, they launched an attack on the salient created
+by the Ludendorff Offensive. Within 4 days, the whole salient was under
+Allied control. The Germans were forced to retreat.
+• Between 26 September and 1 November, Pershing commanded more
+than 1 million American and French soldiers. Using over 300 tanks and 500 American aircraft, the troops he commanded had advanced by 32 km towards the German border by 1 November 1918.
+Although the American forces played a significant role in fighting and ensuring that supply lines worked effectively, perhaps the greatest impact the US forces
+\end{itemize}
+
+\chapter{Ludendorff Offensive}
+
+\section{Reasons for the Ludendorff Offensive}
+
+\begin{description}
+    	\item[American involvement]
+The American Expeditionary Force (AEF) arrived in Europe in 1917 and rapidly increased its presence on the Western Front. By the spring of 1918, there were over one million American soldiers in Europe, and the German high command saw this as a significant threat to their war effort. Germany needed to win the war before the American troops could smash them.
+	\item[British blockade]
+The British naval blockade had a profound impact on the German war effort. By 1917, Germany was facing severe shortages of food, fuel, and other essential supplies, and morale among the German people was declining. The German military saw the Ludendorff Offensive as a way to break the British lines and end the war before Germany's resources were completely depleted.
+	\item[Superior manpower]
+After the collapse of Russia in 1917, the German army was able to transfer 500,000 soldiers from the Eastern Front to the Western Front. This gave them a significant advantage in manpower over the Allied forces for the first time in the entire war (on the Western front), allowing them to launch a coordinated attack along a wide front.
+	\item[Political pressure]
+By 1918, the German government and military leaders were under increasing pressure to end the war and secure a favorable peace settlement. The German people were growing tired of the conflict, and the costs of the war effort were becoming unsustainable. The Ludendorff Offensive was seen as a way to bring the war to a swift conclusion and alleviate the political pressure on the German government and military leaders.
+\end{description}
+
+\section{Operation Michael}
+
+General Ludendorff launched his great and final offensive, Operation Michael, on 21 March 1918.
+
+Ludendorff planned to break the stalemate on the Western Front by driving west through the weakest part of the French and British lines of trenches. Before dawn on 21 March, suddenly, 600 German guns began a powerful bombardment of enemy trenches that lasted for 5 hours. This was followed by the releasing of clouds of deadly mustard gas that suffocated the British soldiers in their trenches. Instead of following up the bombardment with waves of infantry, as was usual and which the British would be expecting, Ludendorff used a different strategy. Specially trained and lightly armed small bands of ``storm troopers'' advanced quickly along the whole front line. Luckily for them, they were hidden in a thick fog as they focused on breaking through gaps and weak defenses. Confused and disoriented, the British climbed out of their trenches, and retreated. Thousands surrendered or were taken prisoner of war.
+
+Close to 100,000 German infantrymen followed the storm troopers and took control of the land gained, despite some fierce opposition from Allied forces. At first, this strategy was brilliantly successful. By July, German troops had advanced 65 km into France. They had crossed the River Somme and had reached the banks of the River Marne. Paris was within range of heavy gunfire.
+
+For the second time in the war, it looked as though Paris would fall to the Germans. However, an important part was played by about 20,000 newly
+arrived American soldiers. Fighting with the Allies, they helped to stop the German advance at the second battle of the Marne in July 1918.
+
+British and French leaders decided to put all the Allied forces under the overall command of General Foch. A French general, his task was to make sure that all the Allied armies acted as a single force and not as separate units. Each national army kept its own commanders-in-chief, although they all worked under General Foch. At first, even though the Germans had been stopped at the Marne, it seemed that the combined Allied forces could do little to stop the German advance.
+
+% Complete surprise
+% Also, first time that the Germans have more soldiers than the allies on the Western front
+% Tahnks were used extensively by the allies at the second battle of the marne and were relatively successful: Much faster, more reliable, more comfrotable to drive and use, crucially also used not by themselves but with other tactics (infantry walking behind tanks), artillery and planes attacking at the same time, etc
+% question: how were tanks used in the hundred days offensive?
+
+
+\section{Failure of the Ludendorff Offensive}
+
+It may have looked as fi the Ludendorff Offensive had been a success. Allied forces were in retreat: German troops were 65 km inside France and were now in a position to attack Paris. Perhaps above all, the offensive had broken the stalemate of trench warfare. However \ldots
+
+\begin{description}
+	\item[Tired troops] Ludendorff had sent too many men into French territory, where 400,000 had been killed, and those that remained were exhausted. He did not have enough troops in reserve to back up or replace his forces in France.
+	\item [Long supply lines] The German troops had gone too far and too fast into French territory. It had not been possible for supplies to keep pace with them. The men were hungry and short of replacement weapons and ammunition. They had to loot food and supplies from captured enemy trenches and French villages. The supply lines that did exist were long and could be easily disrupted by the allies.
+	\item [Salient] The German advance into France had created a 'salient', or bulge, that was 130 km long and 65 km wide. It could be attacked from three sides and so the German troops were open to attack.
+	\item [Effective allied command] British and French leaders decided to put all the Allied forces under the overall command of General Foch. A French general, his task was to make sure that all the Allied armies acted as a single force and not as separate units. Each national army kept its own commanders-in-chief, although they all worked under General Foch. This was much more efficient than the previous command structure where each country's generals control their own army.
+	\item Enemy is retreating, not being broken % most important
+\end{description}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{Western_front_1918_german.jpg}
+\caption{Ludendorff Offensive}
+\end{figure}
+
+\chapter{Hundred Days Offensive}
+
+
+
+\chapter{German Revolution}
+\chapter{Armistice}
+
+\appendix
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}\quad{}(\chaptername\ \thechapter)}{\MakeUppercase{#1}\quad{}(\appendixname\ \thechapter)}}
+
+\chapter{Exam Technique}
+\blinddocument
+
+\backmatter\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{\MakeUppercase{#1}}}
+
+% index.tex
+\end{document}
