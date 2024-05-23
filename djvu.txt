@@ -1,0 +1,5 @@
+pdfimages a.pdf a
+convert a-$i.something a-$i.pbm         # for each
+cjb2 -clean a-$i.pbm a-$i.djvu          # for each
+mv a-000.djvu a.djvu
+djvm -i a.djvu a-$i.djvu                # for each
