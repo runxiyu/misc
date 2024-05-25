@@ -3,8 +3,10 @@
 #include<string.h>
 #include<sys/socket.h>
 #include<arpa/inet.h>
-#include <netinet/in.h>
+#include<netinet/in.h>
 #include<unistd.h>
+#include<errno.h>
+#include<err.h>
 
 int main(int argc, char *argv[])
 {
@@ -14,7 +16,7 @@ int main(int argc, char *argv[])
 
 	socket_desc = socket(AF_INET, SOCK_STREAM, 0);
 	if (socket_desc == -1) {
-		return 1;
+		err(1, "Cannot create socket");
 	}
 
 	server.sin_family = AF_INET;
@@ -22,7 +24,7 @@ int main(int argc, char *argv[])
 	server.sin_port = htons(1234);
 
 	if (bind(socket_desc, (struct sockaddr *)&server, sizeof(server)) < 0) {
-		return 2;
+		err(1, "Cannot bind");
 	}
 
 	listen(socket_desc, 3);
