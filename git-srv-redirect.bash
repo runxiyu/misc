@@ -20,4 +20,5 @@
 declare -a "s=($SSH_ORIGINAL_COMMAND)" 
 p="${s[1]}"
 [ "$p" = "${p#/}" ] && p=/srv/git/"$p"
+[ -d "$p" ] || (mkdir "$p" && cd "$p" && git init --bare --shared >&2 && printf "Warning: Repository at %s did not exist and was just created\n" "$p" >&2)
 exec git-shell -c "${s[0]} ${p@Q}"
