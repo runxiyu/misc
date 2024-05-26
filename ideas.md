@@ -34,6 +34,7 @@ I keep track of them in my head.
 
 # Tech (projects)
 - fcgit: cgit but FastCGI instead of CGI
+- fbfp: feedback from peers
 - smlmp/idc/ememo: finish the projects lmao
 - evosaur: look deeper into architecture design
 - dynamic site generator
