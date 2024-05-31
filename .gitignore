@@ -1,1 +1,3 @@
 *.lyx~
+__pycache__
+venv
