@@ -30,7 +30,6 @@ I keep track of them in my head.
 - The Vegetarian
 
 # Tech (immediate)
-- version control irc.
 
 # Tech (projects)
 - fcgit: cgit but FastCGI instead of CGI
