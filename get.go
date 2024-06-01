@@ -33,9 +33,10 @@ func downloadFile(filepath string, url string) (err error) {
 }
 
 func main() {
+	fmt.Printf("pid: %d\n", os.Getpid())
 	var wg sync.WaitGroup
 
-	for i := 0; i < 2000; i++ {
+	for i := 0; i < 10000; i++ {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
