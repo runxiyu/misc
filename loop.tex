@@ -1,0 +1,8 @@
+\documentclass{article}
+\begin{document}
+\newcounter{cnt}
+\loop
+\thecnt\newpage \stepcounter{cnt}
+\ifnum \value{cnt}<10000
+\repeat
+\end{document}

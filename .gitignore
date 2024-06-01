@@ -1,3 +1,6 @@
 *.lyx~
 __pycache__
 venv
+*.aux
+*.dvi
+*.log
