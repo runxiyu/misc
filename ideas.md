@@ -33,14 +33,17 @@ I keep track of them in my head.
 
 # Tech (projects)
 - fcgit: cgit but FastCGI instead of CGI
-- fbfp: feedback from peers
 - smlmp/idc/ememo: finish the projects lmao
 - evosaur: look deeper into architecture design
 - dynamic site generator
 - static site generator
-- sjdb/ykps
+- sjdb/ykps/fbfp
 - Security
 - OpenBSD
+- Semantic release notes
+
+# Tech (learning)
+- [Operating Systems: Design and Implementation](https://en.wikipedia.org/wiki/Operating_Systems:_Design_and_Implementation)
 
 # Personal
 - meh.tex
