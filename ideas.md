@@ -29,6 +29,10 @@ I keep track of them in my head.
 - Beloved
 - The Vegetarian
 
+# Read (math)
+- How to solve it
+- Quine
+
 # Tech (immediate)
 
 # Tech (projects)
