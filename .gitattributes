@@ -1,0 +1,6 @@
+* linguist-detectable
+*.md linguist-detectable
+*.txt linguist-detectable
+*.bib linguist-detectable
+*.conf linguist-detectable
+*.ini linguist-detectable
