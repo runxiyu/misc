@@ -4,3 +4,4 @@ venv
 *.aux
 *.dvi
 *.log
+.ccls-cache
