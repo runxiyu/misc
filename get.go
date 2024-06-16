@@ -40,7 +40,7 @@ func main() {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			err := downloadFile(fmt.Sprintf("/tmp/test-download-%d", i), "http://localhost:8081")
+			err := downloadFile(fmt.Sprintf("/tmp/test-download-%d", i), "http://localhost:5555")
 			if err != nil {
 				panic(err)
 			}
