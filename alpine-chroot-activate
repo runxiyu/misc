@@ -5,6 +5,10 @@ err() {
 	exit 1
 }
 
+if [[ "$(id -u)" -ne 0 ]]; then
+	err 'Please run as root'
+fi
+
 ensure() {  
 	{ set +x; } 2>/dev/null
         [ $# -lt 1 ] && return 0
