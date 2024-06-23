@@ -1,12 +1,30 @@
 #!/bin/sh
 
+err() {
+	echo "$@" >&2
+	exit 1
+}
+
+ensure() {  
+	{ set +x; } 2>/dev/null
+        [ $# -lt 1 ] && return 0
+	$@ || err failed executing: "$@"
+	set -x
+}
+
 set -xu
 
-. "${HOME}/misc/alpine-chroot-env"
+ensure . "/home/runxiyu/misc/alpine-chroot-env"
+ensure export chroot_dir="$1"
 
-mount -o bind /dev ${chroot_dir}/dev
-mount -t proc none ${chroot_dir}/proc
-mount -o bind /sys ${chroot_dir}/sys
+umount "${chroot_dir}/dev"
+umount "${chroot_dir}/proc"
+umount "${chroot_dir}/sys"
+ensure mount -o bind /dev "${chroot_dir}/dev"
+ensure mount -t proc none "${chroot_dir}/proc"
+ensure mount -o bind /sys "${chroot_dir}/sys"
 
-echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-echo "chroot ${chroot_dir} /bin/ash -l"
+{ set +x; } 2>/dev/null
+ensure printf '\n\n'
+{ set +x; } 2>/dev/null
+ensure echo "chroot '${chroot_dir}' /bin/ash -l"

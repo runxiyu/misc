@@ -1,30 +1,44 @@
 #!/bin/sh
 
+err() {
+	echo "$@" >&2
+	exit 1
+}
+
+ensure() {  
+	{ set +x; } 2>/dev/null
+        [ $# -lt 1 ] && return 0
+	$@ || err failed executing: "$@"
+	set -x
+}
+
 if [ -z "$1" ]
 then
 	printf 'Specify path as the first argument\n' >&2
 	exit 1
 fi
 
-rand="$(base64 < /dev/random | tr -d '/+=' | head -c 10)"
+ensure export rxrand="$(base64 < /dev/random | tr -d '/+=' | head -c 10)"
 
 set -xu
 
-. "${HOME}/misc/alpine-chroot-env"
+ensure . "/home/runxiyu/misc/alpine-chroot-env"
+ensure export chroot_dir="$1"
 
-mkdir "/tmp/alpine-chroot-tmp-$rand"
-cd "/tmp/alpine-chroot-tmp-$rand"
+ensure mkdir -p "${chroot_dir}"
+ensure mkdir "/tmp/alpine-chroot-tmp-$rxrand"
+ensure cd "/tmp/alpine-chroot-tmp-$rxrand"
 
-curl -LO "${mirror}/${release}/main/${arch}/apk-tools-static-${version}.apk"
-tar -xzf apk-tools-static-*.apk
-./sbin/apk.static -X "${mirror}/${release}/main" -U --allow-untrusted -p "${chroot_dir}" --initdb add alpine-base
+ensure curl -LO "${mirror}/${release}/main/${arch}/apk-tools-static-2.14.4-r1.apk"
+ensure tar -xzf apk-tools-static-*.apk
+ensure ./sbin/apk.static -X "${mirror}/${release}/main" -U --allow-untrusted -p "${chroot_dir}" --initdb add alpine-base
 
-cp -L /etc/resolv.conf ${chroot_dir}/etc/
-mkdir -p ${chroot_dir}/etc/apk
+ensure cp -L /etc/resolv.conf ${chroot_dir}/etc/
+ensure mkdir -p ${chroot_dir}/etc/apk
 
-echo "${mirror}/${release}/main" > ${chroot_dir}/etc/apk/repositories
-echo "${mirror}/${release}/community" >> ${chroot_dir}/etc/apk/repositories
+ensure echo "${mirror}/${release}/main" > ${chroot_dir}/etc/apk/repositories
+ensure echo "${mirror}/${release}/community" >> ${chroot_dir}/etc/apk/repositories
 if [ "${release}" = edge ]
 then
-	echo "${mirror}/edge/testing" >> ${chroot_dir}/etc/apk/repositories
+	ensure echo "${mirror}/edge/testing" >> ${chroot_dir}/etc/apk/repositories
 fi
