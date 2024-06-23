@@ -1,0 +1,30 @@
+#!/bin/sh
+
+if [ -z "$1" ]
+then
+	printf 'Specify path as the first argument\n' >&2
+	exit 1
+fi
+
+rand="$(base64 < /dev/random | tr -d '/+=' | head -c 10)"
+
+set -xu
+
+. "${HOME}/misc/alpine-chroot-env"
+
+mkdir "/tmp/alpine-chroot-tmp-$rand"
+cd "/tmp/alpine-chroot-tmp-$rand"
+
+curl -LO "${mirror}/${release}/main/${arch}/apk-tools-static-${version}.apk"
+tar -xzf apk-tools-static-*.apk
+./sbin/apk.static -X "${mirror}/${release}/main" -U --allow-untrusted -p "${chroot_dir}" --initdb add alpine-base
+
+cp -L /etc/resolv.conf ${chroot_dir}/etc/
+mkdir -p ${chroot_dir}/etc/apk
+
+echo "${mirror}/${release}/main" > ${chroot_dir}/etc/apk/repositories
+echo "${mirror}/${release}/community" >> ${chroot_dir}/etc/apk/repositories
+if [ "${release}" = edge ]
+then
+	echo "${mirror}/edge/testing" >> ${chroot_dir}/etc/apk/repositories
+fi

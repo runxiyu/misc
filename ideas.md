@@ -49,6 +49,7 @@ I keep track of them in my head.
 
 # Tech (learning)
 - [Operating Systems: Design and Implementation](https://en.wikipedia.org/wiki/Operating_Systems:_Design_and_Implementation)
+- Actually rust is interesting
 
 # Personal
 - meh.tex

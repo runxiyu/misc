@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -xu
+
+. "${HOME}/misc/alpine-chroot-env"
+
+mount -o bind /dev ${chroot_dir}/dev
+mount -t proc none ${chroot_dir}/proc
+mount -o bind /sys ${chroot_dir}/sys
+
+echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+echo "chroot ${chroot_dir} /bin/ash -l"

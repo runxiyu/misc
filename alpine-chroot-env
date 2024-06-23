@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export chroot_dir="$1"
+export mirror='https://dl-cdn.alpinelinux.org/alpine'
+export arch='aarch64'
+export release='edge'
