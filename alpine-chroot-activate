@@ -18,7 +18,6 @@ ensure() {
 
 set -xu
 
-ensure . "/home/runxiyu/misc/alpine-chroot-env"
 ensure export chroot_dir="$1"
 
 umount "${chroot_dir}/dev"

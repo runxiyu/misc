@@ -1,5 +1,9 @@
 #!/bin/sh
 
+export mirror='https://mirrors.tuna.tsinghua.edu.cn/alpine'
+export arch='aarch64'
+export release='edge'
+
 err() {
 	echo "$@" >&2
 	exit 1
@@ -26,7 +30,6 @@ ensure export rxrand="$(base64 < /dev/random | tr -d '/+=' | head -c 10)"
 
 set -xu
 
-ensure . "/home/runxiyu/misc/alpine-chroot-env"
 ensure export chroot_dir="$1"
 ensure mkdir -p "${chroot_dir}"
 

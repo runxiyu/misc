@@ -1,5 +1,0 @@
-#!/bin/sh
-
-export mirror='https://mirrors.tuna.tsinghua.edu.cn/alpine'
-export arch='aarch64'
-export release='edge'
