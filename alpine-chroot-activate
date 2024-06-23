@@ -25,6 +25,6 @@ ensure mount -t proc none "${chroot_dir}/proc"
 ensure mount -o bind /sys "${chroot_dir}/sys"
 
 { set +x; } 2>/dev/null
-ensure printf '\n\n'
-{ set +x; } 2>/dev/null
-ensure echo "chroot '${chroot_dir}' /bin/ash -l"
+
+printf '\n\nNow, type the following to enter the chroot:\n\n'
+printf "chroot '%s' /bin/ash -l\n\n" "${chroot_dir}"
