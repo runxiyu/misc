@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$#" -ne 1 ]
+then
+	printf 'usage: %s chroot_dir\n' "$0" >&2
+	exit 1
+fi
+
+exec sudo chroot "$1"
