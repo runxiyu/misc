@@ -1,17 +1,24 @@
 #!/bin/sh
 
+if [[ "$(id -u)" -ne 0 ]]; then
+	err 'Please run as root'
+fi
+
+if [ -z "$1" ]
+then
+	printf 'Specify path as the first argument\n' >&2
+	exit 1
+fi
+
 export mirror='https://mirrors.tuna.tsinghua.edu.cn/alpine'
 export arch='aarch64'
 export release='edge'
+export chroot_dir="$1"
 
 err() {
 	echo "$@" >&2
 	exit 1
 }
-
-if [[ "$(id -u)" -ne 0 ]]; then
-	err 'Please run as root'
-fi
 
 ensure() {  
 	{ set +x; } 2>/dev/null
@@ -20,17 +27,11 @@ ensure() {
 	set -x
 }
 
-if [ -z "$1" ]
-then
-	printf 'Specify path as the first argument\n' >&2
-	exit 1
-fi
-
 ensure export rxrand="$(base64 < /dev/random | tr -d '/+=' | head -c 10)"
 
 set -xu
 
-ensure export chroot_dir="$1"
+umask 022
 ensure mkdir -p "${chroot_dir}"
 
 # DOWNLOAD APK AND BOOTSTRAP BASE SYSTEM
