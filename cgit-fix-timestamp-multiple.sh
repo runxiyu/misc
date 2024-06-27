@@ -2,7 +2,9 @@
 
 root="$(pwd)"
 
-for each in "$(find -name '*.git')"
+cd "$root"
+
+for each in $(find -name '*.git') # assume no whitespace :D
 do
 	cd "$each"
 	agefile="$(git rev-parse --git-dir)"/info/web/last-modified
