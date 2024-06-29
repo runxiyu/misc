@@ -1,2 +1,2 @@
 #!/bin/sh
-od -x -A x
+od -t x1 -A x --endian=big
