@@ -46,6 +46,7 @@ I keep track of them in my head.
 - Security
 - OpenBSD
 - Semantic release notes
+- IMSLP streamer
 
 # Tech (learning)
 - [Operating Systems: Design and Implementation](https://en.wikipedia.org/wiki/Operating_Systems:_Design_and_Implementation)
