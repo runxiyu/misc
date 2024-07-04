@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+cd ~/misc
+
+for v in "$@"
+do
+	printf '%s\n' "$v" >> fedora-packages.txt
+done
+
+xargs sudo dnf install < fedora-packages.txt
