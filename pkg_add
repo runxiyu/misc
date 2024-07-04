@@ -2,7 +2,7 @@
 
 # assume that package names don't contain spaces too
 
-set -ex
+set -e
 
 cd ~/misc
 
