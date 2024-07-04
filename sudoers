@@ -1,0 +1,2 @@
+runxiyu ALL=(ALL)       NOPASSWD: /usr/bin/wg-quick
+runxiyu ALL=(ALL)       NOPASSWD: /usr/bin/nmcli
