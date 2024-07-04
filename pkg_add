@@ -4,15 +4,17 @@ set -e
 
 cd ~/misc
 
+rq="$(dnf repoquery --qf '%{name}' 2>/dev/null)"
+
 for v in "$@"
 do
-	if dnf repoquery --qf '%{name}' 2>/dev/null | grep -q '^'"$v"'$'
+	if grep -q '^'"$v"'$' <<< "$rq"
 	then
 		printf '%s\n' "$v" >> fedora-packages.txt
 	else
-		printf 'Package not found\n' >&2;
+		printf 'Package %s not found\n' "$v" >&2;
 		exit 1
 	fi
 done
 
-xargs sudo dnf install < fedora-packages.txt
+xargs sudo dnf install < fedora-packages.txt 2>&1 | grep -v '^Package .* is already installed.'

@@ -56,3 +56,6 @@ zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
 ImageMagick
+firefox
+firefox
+firefox
