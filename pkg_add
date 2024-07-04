@@ -10,7 +10,7 @@ for v in "$@"
 do
 	if grep -q '^'"$v"'$' <<< "$rq"
 	then
-		printf '%s\n' "$v" >> fedora-packages.txt
+		grep -q '^'"$v"'$' fedora-packages.txt || printf '%s\n' "$v" >> fedora-packages.txt
 	else
 		printf 'Package %s not found\n' "$v" >&2;
 		exit 1

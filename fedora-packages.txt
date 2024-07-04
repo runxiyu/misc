@@ -6,7 +6,6 @@ clang-devel
 clang-libs
 cmake
 dejavu-fonts-all
-firefox
 foot
 fuzzel
 gcc
@@ -56,6 +55,4 @@ zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
 ImageMagick
-firefox
-firefox
 firefox
