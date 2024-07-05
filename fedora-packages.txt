@@ -64,3 +64,4 @@ pamixer
 inkscape
 poppler-utils
 rlwrap
+djvulibre
