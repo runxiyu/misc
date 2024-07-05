@@ -60,3 +60,4 @@ google-noto-serif-cjk-fonts
 google-noto-sans-cjk-fonts
 brightnessctl
 vifm
+pamixer
