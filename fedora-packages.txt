@@ -63,3 +63,4 @@ vifm
 pamixer
 inkscape
 poppler-utils
+rlwrap
