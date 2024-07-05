@@ -62,3 +62,4 @@ brightnessctl
 vifm
 pamixer
 inkscape
+poppler-utils
