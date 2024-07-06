@@ -37,7 +37,7 @@ I keep track of them in my head.
 
 # Tech (projects)
 - userspace git-based package manager
-- fcgit: cgit but FastCGI instead of CGI
+- legitrx
 - smlmp/idc/ememo: finish the projects lmao
 - evosaur: look deeper into architecture design
 - dynamic site generator
