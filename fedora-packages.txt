@@ -69,3 +69,4 @@ qpdf
 tig
 bvi
 rust
+rustfmt
