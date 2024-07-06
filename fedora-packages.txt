@@ -65,3 +65,4 @@ poppler-utils
 rlwrap
 djvulibre
 strace
+python3-requests
