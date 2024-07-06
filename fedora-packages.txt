@@ -68,3 +68,4 @@ sqlite-devel
 qpdf
 tig
 bvi
+rust
