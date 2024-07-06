@@ -1,2 +1,2 @@
 #!/bin/sh
-pass=$(pass show ykpaoschool.cn/s22537) ~/ykpsc/tooch/sjauth s22537 pass
+pass=$(pass show ykpaoschool.cn/s22537) ~/sch/tooch/bin/sjauth s22537 pass

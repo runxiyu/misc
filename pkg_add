@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -x
+
 # assume that package names don't contain spaces too
 
 set -e
