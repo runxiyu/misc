@@ -67,3 +67,4 @@ strace
 sqlite-devel
 qpdf
 tig
+bvi
