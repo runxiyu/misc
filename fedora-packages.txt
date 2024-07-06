@@ -67,3 +67,4 @@ djvulibre
 strace
 python3-requests
 sqlite-devel
+qpdf
