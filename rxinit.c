@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/mount.h>
+
 int main(void)
 {
 	puts("rxinit");
