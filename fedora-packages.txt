@@ -73,3 +73,4 @@ rustfmt
 nasm
 meson
 wayland-devel
+json-c-devel
