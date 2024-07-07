@@ -70,3 +70,4 @@ tig
 bvi
 rust
 rustfmt
+nasm
