@@ -71,3 +71,4 @@ bvi
 rust
 rustfmt
 nasm
+meson
