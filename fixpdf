@@ -18,5 +18,5 @@
 
 for pdf ; do
         # GNU GhostScript can repair corrupted pdf's with broken xref's etc that are outputted by proprietary software, plus it can also reduce the size of excessively large pdf's
-        gs -o "${pdf%.*}_$(date +%d%m%y).pdf" -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress "$pdf" && rm "$pdf"
+        gs -o "${pdf%.*}.gs.pdf" -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress "$pdf"
 done
