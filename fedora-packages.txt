@@ -72,3 +72,4 @@ rust
 rustfmt
 nasm
 meson
+wayland-devel
