@@ -74,3 +74,4 @@ nasm
 meson
 wayland-devel
 json-c-devel
+wayland-protocols-devel
