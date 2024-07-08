@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
 		if (new_socket < 0) {
 			return 3;
 		}
-
 		// int client_port = ntohs(client.sin_port);
 		char *client_ip = inet_ntoa(client.sin_addr);
 		for (int i = 0; i < 100; ++i) {
