@@ -78,3 +78,4 @@ wayland-protocols-devel
 indent
 htop
 wireshark
+perl
