@@ -77,3 +77,4 @@ json-c-devel
 wayland-protocols-devel
 indent
 htop
+wireshark
