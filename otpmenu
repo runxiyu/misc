@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+shopt -s nullglob globstar
+
+typeit=0
+if [[ $1 == "--type" ]]; then
+	typeit=1
+	shift
+fi
+
+if [[ -n $WAYLAND_DISPLAY ]]; then
+	menu="fuzzel -d"
+	typetool="wtype -"
+else
+	echo "Error: No Wayland display detected" >&2
+	exit 1
+fi
+
+prefix="$HOME"/.local/share/password-store
+password_files=( "$prefix"/**/*.gpg )
+password_files=( "${password_files[@]#"$prefix"/}" )
+password_files=( "${password_files[@]%.gpg}" )
+
+password=$(printf '%s\n' "${password_files[@]}" | $menu "$@")
+
+[[ -n $password ]] || exit
+
+if [[ $typeit -eq 0 ]]; then
+	pass otp show -c "$password" 2>/dev/null
+else
+	pass otp show "$password" | { IFS= read -r pass; printf %s "$pass"; } | $typetool
+fi
+
