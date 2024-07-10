@@ -3,9 +3,8 @@ I keep track of them in my head.
 
 # Write (philosophy)
 - The null hypothesis
-- JL essay, obviously
-- I politics and "class"
-- Sustainable approaches to democracy: sortition systems in the 20th century and alternate systems of representation
+- Politics and "class"
+- Sortition systems in the 20th century and alternate systems of representation
 
 # Write (literary)
 - Meltsand: more poetry

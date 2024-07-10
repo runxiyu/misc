@@ -1,0 +1,14 @@
+From: Runxi Yu <me@runxiyu.org>
+To: Somebody <somebody@example.org>
+X-Pronouns-Preferred: they/them
+Subject: Lease request for romantic relationship
+
+I could like to request a lease for a romantic relationship with you.
+The time-to-live shall be 30 days. The lease may be renewed in the last
+5 days. If the lease expires without renewal, then pretend that none of
+this has ever happened.
+
+--
+Best regards,
+Runxi Yu (they/them)
+https://runxiyu.org
