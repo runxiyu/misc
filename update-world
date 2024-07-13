@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+cd ~/misc
+
+cp /etc/apk/world alpine-world
+
+git commit alpine-world -m 'Update alpine-world'
+
