@@ -28,6 +28,7 @@ grub
 grub-bios
 htop
 i3status
+isync
 json-c
 json-c-dev
 libcurl
@@ -45,6 +46,7 @@ mesa-va-gallium
 mosh
 ncurses-dev
 neovim
+notmuch
 openssh
 openssl
 openssl-dev
@@ -57,6 +59,7 @@ sway
 sway-doc
 swayidle
 swaylockd
+texlive-full
 tmux
 udev-init-scripts
 udev-init-scripts-openrc
@@ -67,6 +70,7 @@ wmenu
 wpa_supplicant
 xdg-desktop-portal-wlr
 xwayland
+zathura
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
