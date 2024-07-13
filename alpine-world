@@ -22,6 +22,7 @@ git
 gnome-keyring
 gnupg
 go
+gopls
 grim
 grub
 grub-bios
@@ -41,6 +42,7 @@ man-db
 man-pages
 mesa-dri-gallium
 mesa-va-gallium
+mosh
 ncurses-dev
 neovim
 openssh
