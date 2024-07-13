@@ -6,6 +6,7 @@ busybox-mdev-openrc
 ccls
 chrony
 curl-dev
+curl-static
 dmenu
 doas
 e2fsprogs
@@ -20,11 +21,15 @@ fuzzel
 git
 gnome-keyring
 gnupg
+go
 grim
 grub
 grub-bios
 htop
 i3status
+json-c
+json-c-dev
+libcurl
 librewolf
 libva-intel-driver
 linux-firmware-i915
@@ -36,6 +41,7 @@ man-db
 man-pages
 mesa-dri-gallium
 mesa-va-gallium
+ncurses-dev
 neovim
 openssh
 openssl
