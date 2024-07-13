@@ -8,3 +8,4 @@ cp /etc/apk/world alpine-world
 
 git commit alpine-world -m 'Update alpine-world'
 
+git diff HEAD^
