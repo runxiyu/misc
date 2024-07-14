@@ -80,3 +80,4 @@ htop
 wireshark
 perl
 ecl
+ncdu
