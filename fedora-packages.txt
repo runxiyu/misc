@@ -81,3 +81,4 @@ wireshark
 perl
 ecl
 ncdu
+wev
