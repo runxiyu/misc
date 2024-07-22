@@ -30,7 +30,7 @@ I keep track of them in my head.
 
 # Read (math)
 - How to solve it
-- Quine
+- fffQuine
 
 # Tech (immediate)
 
