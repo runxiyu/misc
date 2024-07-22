@@ -222,12 +222,12 @@ char SERVER_INCOMING[NUM_NET_TYPES][NUM_PROTOCOLS] = {
 #endif
 
 #ifdef USE_HAXSERV_PSEUDOCLIENT
-struct string HAXSERV_UID = STRING("1HD000000");
-struct string HAXSERV_NICK = STRING("HaxServ");
-struct string HAXSERV_FULLNAME = STRING("HaxServ");
-struct string HAXSERV_IDENT = STRING("HaxServ");
+struct string HAXSERV_UID = STRING("1HZ000000");
+struct string HAXSERV_NICK = STRING("Jellyfish");
+struct string HAXSERV_FULLNAME = STRING("Jellyfish");
+struct string HAXSERV_IDENT = STRING("Jellyfish");
 struct string HAXSERV_VHOST =
-STRING("rx' one service to rule them all: HaxServ™");
+STRING("rx' one service to rule them all: Jellyfish™");
 struct string HAXSERV_HOST = STRING("/dev/full");
 struct string HAXSERV_ADDRESS = STRING("/dev/null");
 
@@ -249,4 +249,16 @@ struct string HAXSERV_LOG_CHANNEL = STRING("#services");
 
 #ifdef USE_OPENSSL_BUFFERED
 size_t OPENSSL_BUFFERED_LEN = 1048576;
+#endif
+
+#ifdef USE_HAXSERV_PSEUDOCLIENT
+struct string NICKSERV_UID = STRING("1HZ010100");
+struct string NICKSERV_NICK = STRING("NukeServ");
+struct string NICKSERV_FULLNAME = STRING("Nukename Services");
+struct string NICKSERV_IDENT = STRING("NukeServ");
+struct string NICKSERV_VHOST = STRING("services/NukeServ");
+struct string NICKSERV_HOST = STRING("localhost");
+struct string NICKSERV_ADDRESS = STRING("/dev/null");
+struct string SERVICES_CHANNEL = STRING("#services");
+size_t SERVICES_DB_MAX_SIZE = 104857600;
 #endif
