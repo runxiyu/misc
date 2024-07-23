@@ -6,3 +6,5 @@ venv
 *.dvi
 *.log
 .ccls-cache
+iargs
+idir

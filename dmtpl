@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -eu
+
+cd ~/misc/templates
+
+wl-copy < "$(find . -print0 | grep -z -v '^\.$' | cut -z -b 3-  | fuzzel --dmenu0)"
