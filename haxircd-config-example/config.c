@@ -47,7 +47,7 @@ struct server_config SERVER_CONFIG[] = {
 	 .out_pass =
 	 STRING(""),
 
-	 .protocol = INSPIRCD2_PROTOCOL,
+	 .protocol = INSPIRCD3_PROTOCOL,
 
 	 .ignore_remote_unlinks = 0,
 	 .ignore_remote_kills = 1,
