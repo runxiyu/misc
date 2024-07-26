@@ -54,3 +54,9 @@ I keep track of them in my head.
 # Personal
 - meh.tex
 - IRL pledge(2) implementation
+
+
+
+
+
+*sc!

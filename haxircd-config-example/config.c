@@ -39,8 +39,8 @@
 #ifdef USE_SERVER
 struct server_config SERVER_CONFIG[] = {
 	{
-	 .name = STRING("irc.runxiyu.org"),
-	 .sid = STRING("101"),
+	 .name = STRING("v4.irc.runxiyu.org"),
+	 .sid = STRING("103"),
 
 	 .in_pass =
 	 STRING(""),
@@ -57,7 +57,7 @@ struct server_config SERVER_CONFIG[] = {
 	 .autoconnect_type = NET_TYPE_OPENSSL,
 
 	 .address = STRING("irc.runxiyu.org"),
-	 .port = STRING("7005"),
+	 .port = STRING("47005"),
 	 },
 	{
 	 .name = STRING("hax.hax.irc.andrewyu.org"),
@@ -261,4 +261,5 @@ struct string NICKSERV_HOST = STRING("localhost");
 struct string NICKSERV_ADDRESS = STRING("/dev/null");
 struct string SERVICES_CHANNEL = STRING("#services");
 size_t SERVICES_DB_MAX_SIZE = 104857600;
+struct string SERVICES_DB_PATH = STRING("./pseudoclients/services.db");
 #endif
