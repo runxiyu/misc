@@ -1,0 +1,8 @@
+I guess I'll note down some programs I use that I might forget the names of.
+
+Name	Repo	Purpose	
+vocage	cargo	Flash cards, i.e. Anki without the hassle
+arara	std	LaTeX builds
+
+
+vim: ts=20 sw=20

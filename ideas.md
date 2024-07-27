@@ -30,13 +30,14 @@ I keep track of them in my head.
 
 # Read (math)
 - How to solve it
-- fffQuine
+- Quine
 
 # Tech (immediate)
 
 # Tech (projects)
 - userspace git-based package manager
 - legitrx
+- HaxIRCd
 - smlmp/idc/ememo: finish the projects lmao
 - evosaur: look deeper into architecture design
 - dynamic site generator
@@ -53,7 +54,6 @@ I keep track of them in my head.
 
 # Personal
 - meh.tex
-- IRL pledge(2) implementation
 
 
 
