@@ -1,7 +1,10 @@
 #!/bin/sh
 
-set -eu
+set -ux
 
 cd ~/web/nwww
-$EDITOR content/blog/"$1".md
-./upload
+if [ ! -f content/blog/"$1".md ]
+then
+	printf -- '---\ntitle: \ndate: %s\n---\n' "$(date '+%Y-%m-%d')" >> content/blog/"$1".md
+fi
+$EDITOR content/blog/"$1".md && ./upload
