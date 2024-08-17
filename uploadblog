@@ -1,0 +1,4 @@
+#!/bin/sh
+set -ux
+cd ~/web/nwww
+./upload
