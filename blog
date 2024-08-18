@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -ux
+set -ue
 
 cd ~/web/nwww
 if [ ! -f content/blog/"$1".md ]
