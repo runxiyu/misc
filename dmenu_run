@@ -1,3 +1,4 @@
 #!/bin/sh
 
-$(dmenu_path | fuzzel -d)
+# $(dmenu_path | fuzzel -d)
+rofi -show run
