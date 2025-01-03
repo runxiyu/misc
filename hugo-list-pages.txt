@@ -1,0 +1,10 @@
+	{{ if .RegularPages }}
+	<h2>Pages</h2>
+	<ul>
+		{{ range .RegularPages }}
+		<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+		{{ end }}
+	</li>
+	</ul>
+	{{ end }}
+
