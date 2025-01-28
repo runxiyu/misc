@@ -1,10 +1,1 @@
-rxinit
-*.lyx~
-__pycache__
-venv
-*.aux
-*.dvi
-*.log
-.ccls-cache
-iargs
-idir
+a.out
