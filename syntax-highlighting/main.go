@@ -41,9 +41,7 @@ func main() {
 	var lexer chroma.Lexer
 	lexer = lexers.Match(filename)
 	if lexer == nil {
-		if strings.HasPrefix(data, "#!") {
-			lexer = lexers.Analyse(data)
-		}
+		lexer = lexers.Analyse(data)
 		if lexer == nil {
 			lexer = lexers.Get("text")
 		}
